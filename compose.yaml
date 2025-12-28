@@ -1,0 +1,11 @@
+services:
+    canary:
+        build:
+            context: .
+        develop:
+            watch:
+                - path: ./target/*.jar
+                  action: sync+restart
+                  target: /app/app.jar
+        ports:
+            - "8080:8080"

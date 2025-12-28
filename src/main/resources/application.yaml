@@ -1,0 +1,22 @@
+spring:
+    application:
+        name: canary-java-api
+    graphql:
+        graphiql:
+            path: /graphiql
+            enabled: true
+
+server:
+    servlet:
+        context-path: /canary/api
+
+springdoc:
+    show-actuator: true
+
+management:
+    endpoints:
+        web:
+            base-path: /v1/actuator
+
+canary:
+    msg: ${env.canary.msg:Canary}

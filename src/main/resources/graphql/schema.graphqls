@@ -1,0 +1,6 @@
+type Query {
+    """
+    Simple query used to verify that the canary is up and responding
+    """
+    canary: String
+}

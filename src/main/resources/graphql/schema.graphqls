@@ -1,6 +1,18 @@
 type Query {
     """
-    Simple query used to verify that the canary is up and responding
+    Simple query used to verify that the canary is responding with the msg.
     """
-    canary: String
+    msg: String
+
+    """
+    Echoes request string back to user.
+    """
+    echo(msg: String!): String
+}
+
+type Subscription {
+    """
+    Emits an incrementing counter every `intervalMs` milliseconds.
+    """
+    tick(intervalMs: Int = 1000): Int
 }
